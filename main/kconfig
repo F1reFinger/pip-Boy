@@ -1,0 +1,31 @@
+#
+# Pip-Boy Application Configuration
+# This file defines the configuration options for the main component.
+#
+
+# --- Rotary Encoder Switch (Button) ---
+config PIN_ENCODER_SW
+    int "GPIO number for Encoder Switch (SW)"
+    range 0 39
+    default 34
+    help
+        The GPIO pin connected to the push button (switch) contact of the rotary encoder.
+        This pin is typically configured with an interrupt on the falling edge (press).
+
+# --- Rotary Encoder Phase A ---
+config PIN_ENCODER_A
+    int "GPIO number for Encoder Phase A"
+    range 0 39
+    default 35
+    help
+        The GPIO pin connected to the Phase A output of the rotary encoder.
+        This pin is used for directional detection in the ISR.
+
+# --- Rotary Encoder Phase B ---
+config PIN_ENCODER_B
+    int "GPIO number for Encoder Phase B (DT)"
+    range 0 39
+    default 36
+    help
+        The GPIO pin connected to the Phase B (or DT/Data) output of the rotary encoder.
+        This pin is used in conjunction with Phase A for directional detection.

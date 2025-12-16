@@ -1,0 +1,16 @@
+# Diretórios de Build e Saída
+build/
+out/
+${sourceDir}/
+
+# Arquivos de Configuração de Build
+CMakeLists.txt
+sdkconfig
+sdkconfig.ci
+sdkconfig.old
+
+# Scripts e Binários
+pytest_hello_world.py
+
+# Se a pasta "main" for um diretório de arquivos-fonte, você pode precisar ignorar o binário de saída se ele for gerado no mesmo nível:
+# PIP-BOY
