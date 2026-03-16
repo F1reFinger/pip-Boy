@@ -1,5 +1,4 @@
-| Supported Targets | ESP32 | ESP32-C2 | ESP32-C3 | ESP32-C5 | ESP32-C6 | ESP32-C61 | ESP32-H2 | ESP32-H21 | ESP32-H4 | ESP32-P4 | ESP32-S2 | ESP32-S3 |
-| ----------------- | ----- | -------- | -------- | -------- | -------- | --------- | -------- | --------- | -------- | -------- | -------- | -------- |
+
 
 # SPI Host Driver Example
 
@@ -13,11 +12,13 @@ If you are looking for code to drive LCDs in general, rather than code that uses
 
 ### Hardware Required
 
-* An ESP development board, with SPI LCD
+* An ESP32S3 if use another model please adapt on code.
+* st7789v lcd screen 2" uses SPI(this model uses some bgr instead of rgb pay attention to that)
+* rotary encoder module ky-040
 
 **Connection** :
 
-Depends on boards. The GPIO number used by this example can be changed in `spi_master_example_main.c` No wiring is required on ESP-WROVER-KIT
+Depends on boards. The GPIO number used by this example can be changed in `spi_master_example_main.c` No wiring is required on ESP32S3
 
 Especially, please pay attention to the level used to turn on the LCD backlight, some LCD module needs a low level to turn it on, while others take a high level. You can change the backlight level macro LCD_BK_LIGHT_ON_LEVEL in `spi_master_example_main.c`.
 
@@ -28,17 +29,6 @@ Run `idf.py -p PORT flash monitor` to build, flash and monitor the project.
 (To exit the serial monitor, type ``Ctrl-]``.)
 
 See the [Getting Started Guide](https://docs.espressif.com/projects/esp-idf/en/latest/get-started/index.html) for full steps to configure and use ESP-IDF to build projects.
-
-## Example Output
-
-On ESP-WROVER-KIT there will be:
-
-```
-LCD ID: 00000000
-ILI9341 detected.
-LCD ILI9341 initialization.
-```
-
 At the meantime `ESP32` will be displayed on the connected LCD screen.
 
 ## Troubleshooting
